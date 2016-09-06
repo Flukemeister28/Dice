@@ -1,3 +1,4 @@
+Dice bigSean;
 void setup()
 {
 	noLoop();
@@ -5,6 +6,9 @@ void setup()
 void draw()
 {
 	//your code here
+	bigSean.roll();
+	bigSean.portray();
+
 }
 void mousePressed()
 {
@@ -21,7 +25,7 @@ class Die //models one single dice cube
 	{
 		//your code here
 	}
-	void show()
+	void portray()
 	{
 		//your code here
 	}
