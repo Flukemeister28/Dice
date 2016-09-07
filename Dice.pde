@@ -5,9 +5,12 @@ void setup()
 }
 void draw()
 {
-	//your code here
-	bigSean.roll();
-	bigSean.portray();
+	for(int i=0; i<50; i=i+15)
+	{
+		Dice bigSean = new Dice();
+		bigSean.roll();
+		bigSean.portray();
+	}
 
 }
 void mousePressed()
