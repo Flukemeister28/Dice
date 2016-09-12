@@ -6,10 +6,10 @@ void setup()
 }
 void draw()
 {
-	for(int i=0; i<46; i=i+15)
+	for(int x=0; x<=45; x += 15)
 	{
 		background(0);
-		Dice bigSean = new Dice();
+		Die bigSean = new Die(x,150);
 		bigSean.show();
 
 	}
@@ -24,7 +24,7 @@ class Die //models one single dice cube
 	int value, myX1, myY1;
 	Die(int x, int y) //constructor
 	{
-		value = (int)(Math.Random()*6+1);
+		value = (int)(Math.random()*6+1);
 		myX1 = x;
 		myY1 = y;
 
