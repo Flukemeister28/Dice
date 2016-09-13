@@ -1,16 +1,21 @@
 Dice bigSean;
 void setup()
 {
-	size(300,300);
+	size(265,265);
 	noLoop();
 }
 void draw()
 {
-	for(int x=0; x<=45; x += 15)
+	background (0);
+	for(int y = 0; y <= 255; y += 45 )
 	{
-		background(0);
-		Die bigSean = new Die(x,150);
+		for(int x=0; x<=255; x += 45)
+	
+	{
+		
+		Die bigSean = new Die(x,y);
 		bigSean.show();
+	}
 
 	}
 
@@ -21,22 +26,29 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	int value, myX1, myY1;
+	int value, myX, myY;
 	Die(int x, int y) //constructor
 	{
-		value = (int)(Math.random()*6+1);
-		myX1 = x;
-		myY1 = y;
+		value = 1;
+		myX = x;
+		myY = y;
 
 	}
 	void roll()
 	{
-		//your code here
+		
 	}
 	void show()
 	{
-		noStroke();
-		fill(127);
-		rect(myX1,myY1,40,40,18);
+ 		noStroke();
+		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		rect(myX,myY,40,40,18);
+		if (value == 1)
+		{
+			fill(255);
+			textAlign (CENTER);
+			text ("One",myX+20,myY+20);
+		}
+
 	}
 }
