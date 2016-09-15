@@ -1,21 +1,24 @@
 Dice bigSean;
 void setup()
 {
-	size(1000,1000);
+	size(580,650);
 	noLoop();
 }
 void draw()
 {
 	background (0);
-	for(int y = 0; y <= 1000; y += 45 )
+	for(int y = 0; y <= 550; y += 45 )
 	{
-		for(int x=0; x<=1000; x += 45)
+		for(int x=0; x<=550; x += 45)
 	
 	{
 		
 		Die bigSean = new Die(x,y);
 		bigSean.show();
-	}
+		fill(255);
+		textAlign (CENTER);
+		valueAverage = (valueAverage+value)/169;
+		text ("Average value on this roll:"+ valueAverage,290,625);
 
 	}
 
@@ -27,16 +30,12 @@ void mousePressed()
 class Die
 {
 	int value, myX, myY;
+	float valueAverage;
 	Die(int x, int y) //constructor
 	{
 		value = (int)(Math.random()*6+1);
 		myX = x;
 		myY = y;
-
-	}
-	void roll()
-	{
-		
 	}
 	void show()
 	{
