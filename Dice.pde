@@ -4,8 +4,10 @@ void setup()
 	size(580,650);
 	noLoop();
 }
+float valueAverage;
 void draw()
 {
+	valueAverage = 0;
 	background (0);
 	for(int y = 0; y <= 550; y += 45 )
 	{
@@ -17,10 +19,12 @@ void draw()
 		bigSean.show();
 		fill(255);
 		textAlign (CENTER);
-		valueAverage = (valueAverage+value)/169;
-		text ("Average value on this roll:"+ valueAverage,290,625);
+		valueAverage = (valueAverage + bigSean.value);
+		text ("Average value on this roll:",valueAverage,290,625);
+		System.out.println("valueAverage: "+valueAverage);
 
 	}
+}
 
 }
 void mousePressed()
@@ -30,7 +34,7 @@ void mousePressed()
 class Die
 {
 	int value, myX, myY;
-	float valueAverage;
+	int valueAverage;
 	Die(int x, int y) //constructor
 	{
 		value = (int)(Math.random()*6+1);
